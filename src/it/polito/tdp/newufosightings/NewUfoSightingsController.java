@@ -48,7 +48,14 @@ public class NewUfoSightingsController {
 
 	@FXML
 	void doCreaGrafo(ActionEvent event) {
-
+		int anno = Integer.parseInt(txtAnno.getText());
+		int giorni = Integer.parseInt(txtxG.getText());
+		model.createGraph(anno, giorni);
+		txtResult.appendText("Grafo creato!\n");
+		txtResult.appendText("Vertici: "+model.getNumeroVertici()+"\n");
+		txtResult.appendText("Archi: "+model.getNumeroArchi()+"\n");
+		txtResult.appendText(model.getSumWeightNeighbours());
+		
 	}
 
 	@FXML
